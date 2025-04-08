@@ -1,0 +1,16 @@
+[project]
+name = "scanops"
+version = "0.1.0"
+description = "Scanning and testing system networking security and searching for unprocessed vulnerabilities."
+authors = [
+    {name = "SwitDuck"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
