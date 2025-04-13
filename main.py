@@ -25,7 +25,7 @@ def portScanning(host, ports):
         t.start()
 
 def main():
-    parser = optparse.OptionParser('socket_portScan ' + '-H <Host> -P <Port>')
+    '''parser = optparse.OptionParser('socket_portScan ' + '-H <Host> -P <Port>')
     parser.add_option('-H', dest='host', type='string', help='specify host')
     parser.add_option('-P', dest='port', type='string', help='specify port [s] separated by comma')
     (options, args) = parser.parse_args()
@@ -35,5 +35,8 @@ def main():
         print(parser.usage)
         exit()
     portScanning(host, ports)
+    '''
+    from ScanHandler import Sniffing
+    Sniffing.port_Checker("192.168.0.1")
 if __name__ == '__main__':
     main()

@@ -1,10 +1,41 @@
 import logging
 import traceback
-import retry
+#import retry
 import requests
 import http
 import time
 import json
+import nmap
+import routersploit as rout
+
+class Sniffing():
+    @staticmethod
+    def port_Checker(target_ip):
+        nm = nmap.PortScanner()
+        nm.scan(target_ip, "20-65535")
+        for host in nm.all_hosts():
+            print(f"host: {host}")
+            for proto in nm[host].all_protocols():
+                ports = nm[host][proto].keys()
+                for port in ports:
+                    print(f"Port {port}: {nm[host][proto][port]['state']}")
+
+class Application_scan():
+    ...
+
+class Presentation_scan():
+    ...
+
+class Transport_scan():
+    ... 
+
+class Network_scan():
+    def get_router_info(target_ip):
+        router = rout
+        
+        
+    
+'''
 #create basic logging config
 logging.basicConfig(filename='InstuctionsHandler.log', filemode='w', level=logging.ERROR)
 try:
@@ -103,3 +134,4 @@ def main():
         print(parser.usage)
         exit()
     portScanning(host, ports)
+'''
